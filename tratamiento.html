@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamientos en Venta</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    body {
+	background-color: #C39;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tratamientos en Venta</h1>
+        
+        <div class="scissors-box">
+            <div class="product" id="product1">
+                <img src="tratamiento-hidratante.jpg" alt="Tratamiento Hidratante">
+                <h2>Tratamiento Hidratante</h2>
+                <p>Precio: $15.00</p>
+                <button onclick="addToCart('Tratamiento Hidratante', 15)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product2">
+                <img src="tratamiento-fortalecedor.jpg" alt="Tratamiento Fortalecedor">
+                <h2>Tratamiento Fortalecedor</h2>
+                <p>Precio: $20.00</p>
+                <button onclick="addToCart('Tratamiento Fortalecedor', 20)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product3">
+                <img src="tratamiento-exfoliante.jpg" alt="Tratamiento Exfoliante">
+                <h2>Tratamiento Exfoliante</h2>
+                <p>Precio: $12.00</p>
+                <button onclick="addToCart('Tratamiento Exfoliante', 12)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product4">
+                <img src="tratamiento-nutritivo.jpg" alt="Tratamiento Nutritivo">
+                <h2>Tratamiento Nutritivo</h2>
+                <p>Precio: $18.00</p>
+                <button onclick="addToCart('Tratamiento Nutritivo', 18)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product5">
+                <img src="tratamiento-capilar.jpg" alt="Tratamiento Capilar">
+                <h2>Tratamiento Capilar</h2>
+                <p>Precio: $25.00</p>
+                <button onclick="addToCart('Tratamiento Capilar', 25)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product6">
+                <img src="tratamiento-facial.jpg" alt="Tratamiento Facial">
+                <h2>Tratamiento Facial</h2>
+                <p>Precio: $30.00</p>
+                <button onclick="addToCart('Tratamiento Facial', 30)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <h2>Carrito de Compras</h2>
+        <div id="cart"></div>
+        <button id="checkoutButton" style="display:none;" onclick="checkout()">Comprar</button>
+    </div>
+
+<script>
+        const cartItems = [];
+
+        function addToCart(productName, productPrice) {
+            const item = { name: productName, price: productPrice };
+            cartItems.push(item);
+            displayCart();
+            document.getElementById('checkoutButton').style.display = 'block'; // Mostrar botón de comprar
+        }
+
+        function displayCart() {
+            const cartDiv = document.getElementById('cart');
+            cartDiv.innerHTML = ''; // Limpiar el carrito
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartDiv.appendChild(itemDiv);
+            });
+
+            const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+            const totalDiv = document.createElement('div');
+            totalDiv.textContent = `Total: $${total.toFixed(2)}`;
+            cartDiv.appendChild(totalDiv);
+        }
+
+        function checkout() {
+            alert("Gracias por su compra!"); // Aquí puedes integrar un proceso de pago real
+            cartItems.length = 0; // Vaciar el carrito
+            displayCart();
+            document.getElementById('checkoutButton').style.display = 'none'; // Ocultar botón de comprar
+        }
+    </script>
+</body>
+</html>

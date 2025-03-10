@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salón de Belleza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo suave */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff69b4; /* Color de fondo del encabezado */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .section-title {
+            color: #ff69b4; /* Color para los títulos de las secciones */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ff69b4;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .service {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        .service img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        #contact {
+            margin: 20px;
+            text-align: center;
+        }
+        #map {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Salón de Belleza</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p>En nuestro salón, nos dedicamos a realzar tu belleza natural. Ofrecemos una variedad de servicios para que te sientas y luzcas increíble.</p>
+            <img src="sobre-nosotros.jpg" alt="Salón de Belleza" style="width: 100%; border-radius: 5px;">
+        </section>
+        
+        <section id="services">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="service-list">
+                <div class="service">
+                    <img src="corte-cabello.jpg" alt="Corte de Cabello">
+                    <h3>Corte de Cabello</h3>
+                    <p>Transforma tu look con un corte moderno y estilizado.</p>
+                </div>
+                <div class="service">
+                    <img src="manicura.jpg" alt="Manicura">
+                    <h3>Manicura</h3>
+                    <p>Disfruta de unas manos perfectas con nuestra manicura profesional.</p>
+                </div>
+                <div class="service">
+                    <img src="facial.jpg" alt="Facial">
+                    <h3>Faciales</h3>
+                    <p>Revitaliza tu piel con nuestros tratamientos faciales personalizados.</p>
+                </div>
+                <div class="service">
+                    <img src="maquillaje.jpg" alt="Maquillaje">
+                    <h3>Maquillaje</h3>
+                    <p>Prepárate para cualquier ocasión con nuestro servicio de maquillaje.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="info">
+            <h2 class="section-title">Datos Interesantes</h2>
+            <ul>
+                <li>La piel es el órgano más grande del cuerpo humano y necesita cuidados constantes.</li>
+                <li>Un buen corte de cabello puede mejorar tu confianza y autoestima.</li>
+                <li>La manicura regular ayuda a mantener las uñas saludables y fuertes.</li>
+                <li>Los tratamientos faciales pueden ayudar a combatir el envejecimiento y las imperfecciones.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contacto</h2>
+            <p>Visítanos en nuestra ubicación:</p>
+            <p><strong>Calle Ficticia 123, Ciudad Belleza, CP 45678</strong></p>
+            <div id="map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509046!2d144.95373531531668!3d-37.81627997975123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0b3c4c1b%3A0x5045675218cee4e3!2sCalle%20Ficticia%20123%2C%20Ciudad%20Belleza!5e0!3m2!1ses!2ses!4v1658918055456!5m2!1ses!2ses" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Salón de Belleza. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

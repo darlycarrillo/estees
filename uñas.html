@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tintes para Uñas en Venta</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    body {
+	background-color: #C39;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tintes para Uñas en Venta</h1>
+        
+        <div class="scissors-box">
+            <div class="product" id="product1">
+                <img src="tinte-rojo.jpg" alt="Tinte Rojo">
+                <h2>Tinte Rojo</h2>
+                <p>Precio: $8.00</p>
+                <button onclick="addToCart('Tinte Rojo', 8)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product2">
+                <img src="tinte-azul.jpg" alt="Tinte Azul">
+                <h2>Tinte Azul</h2>
+                <p>Precio: $9.00</p>
+                <button onclick="addToCart('Tinte Azul', 9)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product3">
+                <img src="tinte-verde.jpg" alt="Tinte Verde">
+                <h2>Tinte Verde</h2>
+                <p>Precio: $7.50</p>
+                <button onclick="addToCart('Tinte Verde', 7.5)">Agregar al Carrito</button>
+            </div>
+
+            <div class="product" id="product4">
+                <img src="tinte-pink.jpg" alt="Tinte Rosa">
+                <h2>Tinte Rosa</h2>
+                <p>Precio: $8.50</p>
+                <button onclick="addToCart('Tinte Rosa', 8.5)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <h2>Carrito de Compras</h2>
+        <div id="cart"></div>
+        <button id="checkoutButton" style="display:none;" onclick="checkout()">Comprar</button>
+    </div>
+
+    <script>
+        const cartItems = [];
+
+        function addToCart(productName, productPrice) {
+            const item = { name: productName, price: productPrice };
+            cartItems.push(item);
+            displayCart();
+            document.getElementById('checkoutButton').style.display = 'block'; // Mostrar botón de comprar
+        }
+
+        function displayCart() {
+            const cartDiv = document.getElementById('cart');
+            cartDiv.innerHTML = ''; // Limpiar el carrito
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartDiv.appendChild(itemDiv);
+            });
+
+            const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+            const totalDiv = document.createElement('div');
+            totalDiv.textContent = `Total: $${total.toFixed(2)}`;
+            cartDiv.appendChild(totalDiv);
+        }
+
+        function checkout() {
+            alert("Gracias por su compra!"); // Aquí puedes integrar un proceso de pago real
+            cartItems.length = 0; // Vaciar el carrito
+            displayCart();
+            document.getElementById('checkoutButton').style.display = 'none'; // Ocultar botón de comprar
+        }
+    </script>
+</body>
+</html>

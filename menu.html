@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas - Jardín Natural</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    body {
+	background-color: #C69;
+}
+    </style>
+</head>
+<body>
+    <div class="garden-container">
+        <div class="garden-icon">
+            ✂️💇‍♀️ <!-- Tijeras y Cabello -->
+        </div>
+        <h1>Contador</h1>
+        <div class="counter" id="visitCounter">0</div>
+        <button onclick="incrementCounter()">Visita</button>
+    </div>
+
+    <p>&nbsp; </p>
+    <p><a href="tinte.html" target="mainFrame">tinte</a></p>
+    <p><a href="tratamiento.html" target="mainFrame">tratamiento</a></p>
+    <p><a href="uñas.html" target="mainFrame">uñas</a></p>
+    <p><a href="info.html" target="mainFrame">inicio</a></p>
+    <p>&nbsp; </p>
+<script>
+        let visits = 0;
+
+        function incrementCounter() {
+            visits++;
+            document.getElementById('visitCounter').innerText = visits;
+        }
+      </script>
+</body>
+</html>
